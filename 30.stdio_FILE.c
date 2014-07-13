@@ -71,6 +71,7 @@ void once_a_line()
 	char* rtn;
 	while((rtn=fgets(buf,buf_size,f1))!=NULL){
 		printf("->%s\r\n",buf);
+		// write to another file
 		int rtn2=fputs(buf,f2);
 		if(rtn2==EOF){
 			perror("error when write to another file");
