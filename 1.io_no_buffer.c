@@ -1,6 +1,9 @@
-// io no-buffer
+//
+//	io no-buffer
 //
 //	需要手动设置BufferSize
+//	open()/read()/write()/lseek()	
+//
 //
 
 #include <stdio.h> // stdio
