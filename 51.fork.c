@@ -32,6 +32,12 @@ void test_fork()
 	}
 }
 
+void test_fork_return_twice()
+{
+	fork(); // 这里return两次
+	printf("@\r\n");//打印两次
+}
+
 // 慎重使用vfork
 void test_vfork()
 {
@@ -59,6 +65,7 @@ void test_vfork()
 
 int main(const int argc,char* argv[])
 {
+	test_fork_return_twice();
 	test_fork();
 	test_vfork();
 	return 0;
