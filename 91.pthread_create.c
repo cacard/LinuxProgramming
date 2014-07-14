@@ -20,8 +20,8 @@
 // 当前线程id
 void test_pthread_t()
 {
-	pthread_t pt=pthread_self();
-	printf("->main thread's pthread_t=%ld\r\n",pt);
+	pthread_t tid=pthread_self();
+	printf("->main thread's pthread_t=%u (0x%x)\r\n",(unsigned int)tid,(unsigned int)tid);
 }
 
 // 创建线程
@@ -29,7 +29,7 @@ void test_pthread_t()
 void* new_thread_function()
 {
 	pthread_t tid=pthread_self();
-	printf("->runing in new thread,tid=%ld\r\n",tid);
+	printf("->runing in new thread,tid=%u\r\n",(unsigned int)tid);
 	return ((void*)0);
 }
 void test_pthread_create()
@@ -46,7 +46,7 @@ void test_pthread_create()
 		perror("error when create thread");
 		printf("error when create thread,rtn=%d\r\n",rtn);
 	}else{
-		printf("create thread success,tid=%d\r\n",tid);
+		printf("create thread success,tid=%u\r\n",(unsigned int)tid);
 	}
 
 	// join线程

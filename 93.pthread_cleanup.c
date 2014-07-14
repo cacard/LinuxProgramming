@@ -21,7 +21,7 @@ void clean_()
 void* thread_function()
 {	
 	pthread_t tid=pthread_self();
-	printf("->enter thread,tid=%d\r\n",tid);
+	printf("->enter thread,tid=%u\r\n",(unsigned int)tid);
 	
 	// register clean function
 	pthread_cleanup_push(clean,NULL);
@@ -39,7 +39,7 @@ void test()
 	if(r!=0){
 		printf("error when create thread\r\n");
 	}else{
-		printf("create thread success.tid=%d\r\n",tid);
+		printf("create thread success.tid=%u\r\n",(unsigned int)tid);
 	}
 
 	// join
