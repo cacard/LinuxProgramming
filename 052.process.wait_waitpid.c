@@ -12,11 +12,6 @@
 //		- 可选择等待哪些子进程
 //		- 可不阻塞等待
 //
-//	孤儿进程
-//
-//
-//	僵尸进程
-//
 //
 
 #include <stdio.h>
@@ -34,14 +29,15 @@ void test_wait()
 		printf("enter children,will sleep(3)\r\n");
 		sleep(3);
 		printf("children exit\r\n");
-		exit(0);
+		exit(2); // TODO 父进程得到的退出码不是2
+			 // DONE 使用WEXITSTATUS转换
 	}
 	if(pid>0){ // father
 		int status;
 
 		printf("->wait()\r\n");
 		pid_t pid_wait = wait(&status);
-		printf("->child status=%d\r\n",status);
+		printf("->child status=%d\r\n",WEXITSTATUS(status));
 
 		return;
 	}
