@@ -1,6 +1,8 @@
 //
 //	access()
-//	权限测试,文件是否存在
+//	- 权限测试
+//	- 文件是否存在
+//
 
 #include <stdio.h>
 #include <unistd.h>

@@ -40,7 +40,7 @@ void test_ipaddr()
 // socket address related
 void test_socketaddr()
 {
-	// ipv3
+	// ipv4
 	struct in_addr addr;
 	addr.s_addr=inet_addr("127.0.0.1");
 

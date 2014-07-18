@@ -1,9 +1,9 @@
 //
-//	error 
+//	错误处理 
 //
-//	errno 错误标号
-//	perror() 打印错误标号对应的错误消息到控制台
-//
+//	errno:错误标号
+//	perror(msg):打印错误标号对应的错误消息到控制台
+//	strerror(errno):标号转化成语义
 
 #include <errno.h> // ERROR NOMBER
 
@@ -13,6 +13,9 @@ int main()
 	printf("when no error,errnum is %d\r\n",errno);
 	// print error
 	perror("some error");
+
+	char* err_means=strerror(1);
+	printf("error_emans=%s\r\n",err_means);
 
 	// 打印errno代表的含义
 	int i=0;

@@ -1,8 +1,8 @@
 //
 //	io no-buffer
 //
-//	需要手动设置BufferSize
-//	open()/read()/write()/lseek()	
+//		需要手动设置BufferSize
+//		open()/read()/write()/lseek()	
 //
 //
 

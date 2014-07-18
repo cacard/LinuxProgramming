@@ -23,8 +23,7 @@ int main()
 
 	// stat(char* file,struct stat* buf)
 	struct stat fileStat;
-	int r1=stat(path,&fileStat);
-	if(r1<0){
+	if(stat(path,&fileStat)<0){
 		perror("error when stat()");
 		exit(1);
 	}
@@ -32,5 +31,5 @@ int main()
 
 	// fstat(int fd,struct stat* buf)
 	
-
+	return 0;
 }

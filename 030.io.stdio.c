@@ -1,14 +1,14 @@
 //
-//	stdio FILE
+//	stdio / FILE
 //
 //	* 打开流
-//		* FILE* fopen()
+//		FILE* fopen()
 //	* 每次读写一个字符
-//		* getc()/fgetc()/putc()/fputc() 
+//		getc()/fgetc()/putc()/fputc() 
 //	* 每次读写一行字符
-//		* fget() 读取一个缓冲区大小以null结尾，获取读取一行以null结尾
-//		* fputs() 写入一个以null结尾的字符串，null不写入。
-//		* gets()/puts() 不推荐使用
+//		fget() 读取一个缓冲区大小以null结尾，获取读取一行以null结尾
+//		fputs() 写入一个以null结尾的字符串，null不写入。
+//		gets()/puts() 不推荐使用
 //	* 直接IO
 //
 
