@@ -9,7 +9,7 @@
 //		data:0x1234
 //		data in address:[34][12]
 //
-//	一般，intel/amd均采用小端模式
+//	一般，intel采用小端模式
 //
 
 #include <stdio.h>
