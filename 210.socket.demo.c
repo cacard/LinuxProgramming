@@ -117,31 +117,32 @@ void* thread_client()
 	return NULL;
 }
 
-void start_running()
+void start_server()
 {
-	pthread_t tidServer;
-	pthread_t tidClient;
-	int r1,r2;
-	r1=pthread_create(&tidServer,NULL,thread_server,NULL);
-
-	// sleep for server runing
-	sleep(3);
-
-	r2=pthread_create(&tidClient,NULL,thread_client,NULL);
-	if(r1!=0){
+	pthread_t tid;
+	int r;
+	r=pthread_create(&tid,NULL,thread_server,NULL);
+	if(r!=0){
 		perror("error when create thread_server");
 	}else{
-		pthread_join(tidServer,NULL);
+		pthread_join(tid,NULL);
 	}
-	if(r2!=0){
+}
+
+void start_client()
+{
+	pthread_t tid;
+	int r;
+	r=pthread_create(&tid,NULL,thread_client,NULL);
+	if(r!=0){
 		perror("error when create thread_client");
 	}else{
-		pthread_join(tidClient,NULL);
+		pthread_join(tid,NULL);
 	}
 }
 
 int main(int argc,char* argv[])
 {
-	start_running();
+	start_client();
 	return 0;
 }
