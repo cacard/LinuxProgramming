@@ -4,6 +4,7 @@
 //
 //	测试时，client 使用 socket.demo.c
 //
+//	TODO waitpid
 
 #include <stdio.h>
 #include <stdlib.h>
