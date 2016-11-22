@@ -19,11 +19,11 @@
 int main(int c,char* v[])
 {
 	// main thread
-	pid_t pid=getpid();
-	pid_t ppid=getppid();
+	pid_t pid = getpid();     //process id
+	pid_t ppid = getppid();   //parent process-id
 
-	uid_t uid=getuid();
-	gid_t gid=getgid();
+	uid_t uid = getuid();     //user id
+	gid_t gid = getgid();     //group id
 
 	printf("pid%d,ppid%d,uid%d,gid%d\r\n",pid,ppid,uid,gid);
 
