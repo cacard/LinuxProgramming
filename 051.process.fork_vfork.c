@@ -19,21 +19,30 @@
 
 void test_fork()
 {
+	printf("->enter test_fork()\n");
+
 	pid_t temp_pid;
-	if((temp_pid=fork())<0){
+
+	// error
+	if((temp_pid = fork()) < 0){
 		perror("error when fork()");
 		printf("error wehn fork()..\r\n");
 	}
-	if(temp_pid==0){
+
+	// in child
+	if(temp_pid == 0){
 		printf("->child process,pid=%d,ppid=%d\r\n",getpid(),getppid());
 	}
-	if(temp_pid>0){
+
+	// in parent
+	if(temp_pid > 0){
 		printf("->parent process,pid=%d,ppid=%d\r\n",getpid(),getppid());
 	}
 }
 
 void test_fork_return_twice()
 {
+	printf("-> enter test_fork_return_twice()\n");
 	fork(); // 这里return两次
 	printf("@\r\n");//打印两次
 }
@@ -65,8 +74,8 @@ void test_vfork()
 
 int main(const int argc,char* argv[])
 {
-	test_fork_return_twice();
+	//test_fork_return_twice();
 	test_fork();
-	test_vfork();
+	//test_vfork();
 	return 0;
 }

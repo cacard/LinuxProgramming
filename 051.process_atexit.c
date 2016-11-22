@@ -21,12 +21,17 @@ void exit_handler_2()
 
 int main()
 {
+	// register handler1
 	if(atexit(exit_handler_1) !=0 ){
 		perror("error when register handler1");
 	}
+
+	// register handler2
 	if(atexit(exit_handler_2) !=0 ){
 		perror("error when register handler2");
 	}
+
+	printf("I will exit...\n");
 
 	return 0;
 }
