@@ -24,7 +24,8 @@ int main(int c,char* v[])
 
 	uid_t uid = getuid();     //user id
 	gid_t gid = getgid();     //group id
-
+	
+	printf("\nget current process's pid/ppid/uid/gid:\n");
 	printf("pid%d,ppid%d,uid%d,gid%d\r\n",pid,ppid,uid,gid);
 
 	return 0;
